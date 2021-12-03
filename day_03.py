@@ -66,7 +66,7 @@ def gamma_epsilon(diagnostics):
     print(f"Epsilon rate is: {epsilon}")
 
 def main():
-    with open("diagnostics.txt") as file:
+    with open("day_03_input.txt") as file:
         lines = file.read().split('\n')
     gamma_epsilon(lines)
 
