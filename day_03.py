@@ -23,16 +23,21 @@ So, the gamma rate is the binary number 10110, or 22 in decimal.
 The epsilon rate is calculated in a similar way; rather than use the most common bit, the least common bit from each position is used. So, the epsilon rate is 01001, or 9 in decimal. Multiplying the gamma rate (22) by the epsilon rate (9) produces the power consumption, 198.
 Use the binary numbers in your diagnostic report to calculate the gamma rate and epsilon rate, then multiply them together. What is the power consumption of the submarine? (Be sure to represent your answer in decimal, not binary.)
 """
-def binarytodecimal(bin_string):
-    """Converts a binary string to decimal in integer format."""
-    return int(bin_string, 2)
+def binarytodecimal(bin_number):
+    return int(bin_number, 2)
 
 def gamma_epsilon(diagnostics):
     """Returns the Power, which is defined by the product of the Gamma and Epsilon Rates.
     diagnostics (list) of binomial integers
     """
-    zeroes = [0,0,0,0,0]
-    ones = [0,0,0,0,0]
+    
+    def zerolistmaker(n):
+        """Creates a list of n zeroes."""
+        listofzeros = [0] * n
+        return listofzeros
+
+    zeroes = zerolistmaker(len(diagnostics[0]))
+    ones = list(zeroes)
     gamma = ''
     epsilon = ''
 
